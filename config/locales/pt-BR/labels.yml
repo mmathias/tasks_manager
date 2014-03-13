@@ -1,0 +1,8 @@
+pt-BR:
+  labels:
+    user:
+      name: "Seu nome"
+      email: "Seu e-mail"
+      login: "Seu login"
+      password: "Sua senha"
+      password_confirmation: "Sua confirmação de senha"
