@@ -6,3 +6,6 @@ pt-BR:
       login: "Seu login"
       password: "Sua senha"
       password_confirmation: "Sua confirmação de senha"
+    login:
+      credential: "Informe seu e-mail ou login"
+      password: "Sua senha"

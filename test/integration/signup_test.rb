@@ -14,7 +14,7 @@ class SignupTest < ActionDispatch::IntegrationTest
     click_button create_button("user")
 
     assert_equal "/login", current_path
-    assert page.has_content?("Cadastro realizado com sucesso!")
+    assert_notice_message("signup.create")
   end
 
   test "sign up with invalid data" do

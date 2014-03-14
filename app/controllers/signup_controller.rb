@@ -8,10 +8,10 @@ class SignupController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #salva mensagem na sessao
+      # salva mensagem na sessao
       # controller + action + type of message
       # flash.signup.create.notice
-      flash.notice = "Cadastro realizado com sucesso!"
+      flash.notice = t("flash.signup.create.notice")
 
       redirect_to "/login"
     else

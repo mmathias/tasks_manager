@@ -2,9 +2,8 @@
 
 <% if @user.errors.any? %>
   <p>
-    <%= t("form.error_message") %>
+   <%= t("form.error_message") %>
   </p>
-
   <ul>
     <% for message in @user.errors.full_messages %>
       <li>

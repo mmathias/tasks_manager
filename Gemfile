@@ -8,6 +8,7 @@ gem "therubyracer", platforms: :ruby
 gem "jquery-rails"
 gem "turbolinks"
 gem "rails-i18n"
+gem "bcrypt-ruby", "~> 3.1.2"
 
 group :development, :test do
   gem "pry-meta"
@@ -16,4 +17,5 @@ end
 group :test do
   gem "capybara"
   gem "turn"
+  gem "factory_girl"
 end

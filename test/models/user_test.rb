@@ -16,6 +16,18 @@ class UserTest < ActiveSupport::TestCase
     assert user.errors[:email].any?
   end
 
+  test "rejects duplicated email" do
+    existing = create(:user)
+    user = User.create(email: existing.email)
+    assert user.errors[:email].any?
+  end
+
+  test "rejects duplicated login" do
+    existing = create(:user)
+    user = User.create(login: existing.login)
+    assert user.errors[:login].any?
+  end
+
   %w[
     john@example.org
     john@example.me
