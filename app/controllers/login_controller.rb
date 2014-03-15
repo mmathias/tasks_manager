@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-  before_action :redirect_logged_users
+  before_action :redirect_logged_users, except: :destroy
 
   def new
   end
@@ -19,5 +19,10 @@ class LoginController < ApplicationController
       flash.alert = t("flash.login.create.alert")
       render :new
     end
+  end
+
+  def destroy
+    reset_session
+    redirect_to "/login"
   end
 end

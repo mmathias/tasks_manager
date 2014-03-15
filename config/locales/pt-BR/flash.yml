@@ -5,4 +5,8 @@ pt-BR:
         notice: "Cadastro realizado com sucesso!"
     login:
       create:
-        alert: Não encontramos seu usuário."
+        alert: "Não encontramos seu usuário."
+    tasks:
+      create:
+        notice: "Sua tarefa foi adicionada com sucesso!"
+        alert: "Erro: %{messages}"

@@ -14,8 +14,8 @@ end
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
-  include IntegrationHelpers
   include FactoryGirl::Syntax::Methods
+  include IntegrationHelpers
 end
 
 class ActiveSupport::TestCase

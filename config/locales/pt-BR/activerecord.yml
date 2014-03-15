@@ -7,6 +7,9 @@ pt-BR:
         login: "Login"
         password: "Senha"
         password_confirmation: "Confirmação de senha"
+      task:
+        title: "Tarefa"
+        user: "Usuário"
 
     models:
       user: "Usuário"

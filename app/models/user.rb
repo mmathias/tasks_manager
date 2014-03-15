@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
       with: /\A[a-z0-9.]+(\+[a-z0-9_-]+)?@[a-z0-9.-]+\.[a-z]{2,4}\z/
 
   has_secure_password
+
+  has_many :tasks
 end

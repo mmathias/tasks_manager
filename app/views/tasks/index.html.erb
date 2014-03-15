@@ -1,0 +1,17 @@
+<%= form_for @task, url: "/tasks/new" do |f| %>
+  <p>
+    <%= f.label :title, t("labels.task.title") %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= task.title %>
+    </li>
+  <% end %>
+</ul>

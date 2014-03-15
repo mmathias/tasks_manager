@@ -9,3 +9,5 @@ pt-BR:
     login:
       credential: "Informe seu e-mail ou login"
       password: "Sua senha"
+    task:
+      title: "Descreva sua tarefa"

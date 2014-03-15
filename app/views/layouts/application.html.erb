@@ -8,9 +8,6 @@
   </head>
   <body>
 
-  <%= flash.notice %>
-  <%= flash.alert %>
-
   <% for type, message in flash %>
     <p class="<%= type %> message">
       <%= message %>
@@ -21,8 +18,8 @@
   <%= link_to t("menu.login"), "/login" %>
 
   <% if logged_in? %>
-    Olá, <%= current_user.name %>
     <%= t("user.greeting", name: current_user.name) %>
+    <%= button_to t("buttons.logout"), "/logout", method: "delete" %>
   <% end %>
 
   <%= yield %>

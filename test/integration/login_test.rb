@@ -3,13 +3,7 @@ require 'test_helper'
 class LoginTest < ActionDispatch::IntegrationTest
   test "with valid credentials" do
     user = create(:user)
-
-    visit "/"
-    click_link t("menu.login")
-
-    fill_in label("login.credential"), with: user.email
-    fill_in label("login.password"), with: user.password
-    click_button t("buttons.login")
+    login_as(user)
 
     assert_equal "/tasks", current_path
     assert page.has_content?(t("user.greeting", name: user.name))
@@ -30,6 +24,5 @@ class LoginTest < ActionDispatch::IntegrationTest
 
     visit "/login"
     assert_equal "/tasks", current_path
-    # assert page.has_content?(t("user.logout"))
   end
 end

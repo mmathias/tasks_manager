@@ -15,12 +15,12 @@ module IntegrationHelpers
     assert page.has_content?(t("form.error_message"))
   end
 
-  def assert_notice_message(scope)
-    assert page.has_content?(t("flash.#{scope}.notice"))
+  def assert_notice_message(scope, options = {})
+    assert page.has_content?(t("flash.#{scope}.notice", options))
   end
 
-  def assert_alert_message(scope)
-    assert page.has_content?(t("flash.#{scope}.alert"))
+  def assert_alert_message(scope, options = {})
+    assert page.has_content?(t("flash.#{scope}.alert", options))
   end
 
   def login_as(user)
