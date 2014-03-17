@@ -13,7 +13,7 @@ class SignupController < ApplicationController
       # flash.signup.create.notice
       flash.notice = t("flash.signup.create.notice")
 
-      redirect_to "/login"
+      redirect_to login_path
     else
       render :new
     end

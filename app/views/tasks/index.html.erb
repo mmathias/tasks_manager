@@ -1,17 +1,24 @@
-<%= form_for @task, url: "/tasks/new" do |f| %>
+<%= form_for @task, url: new_task_path, html: {class: "task-form"}  do |f| %>
   <p>
     <%= f.label :title, t("labels.task.title") %>
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit class: "button"%>
   </p>
 <% end %>
 
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-      <%= task.title %>
-    </li>
-  <% end %>
-</ul>
+<%= form_tag "/" do |f| %>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li class="<%= task.status %>">
+        <%= check_box_tag "box" %>
+        <%= task.title %>
+        <span class="actions">
+          <a href="/tasks/">Editar</a>
+          <a href="/tasks/">Editar</a>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

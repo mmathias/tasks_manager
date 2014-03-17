@@ -13,7 +13,7 @@ class SignupTest < ActionDispatch::IntegrationTest
 
     click_button create_button("user")
 
-    assert_equal "/login", current_path
+    assert_equal login_path, current_path
     assert_notice_message("signup.create")
   end
 
@@ -22,7 +22,7 @@ class SignupTest < ActionDispatch::IntegrationTest
     click_link t("menu.signup")
     click_button create_button("user")
 
-    assert_equal "/signup", current_path
+    assert_equal signup_path, current_path
 
     assert_form_error_message
   end

@@ -5,16 +5,16 @@ class LoginTest < ActionDispatch::IntegrationTest
     user = create(:user)
     login_as(user)
 
-    assert_equal "/tasks", current_path
+    assert_equal tasks_path, current_path
     assert page.has_content?(t("user.greeting", name: user.name))
   end
 
   test "with invalid credentials" do
-    visit "/"
+    visit root_path
     click_link t("menu.login")
     click_button t("buttons.login")
 
-    assert_equal "/login", current_path
+    assert_equal login_path, current_path
     assert_alert_message "login.create"
   end
 
@@ -22,7 +22,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     user = create(:user)
     login_as(user)
 
-    visit "/login"
-    assert_equal "/tasks", current_path
+    visit login_path
+    assert_equal tasks_path, current_path
   end
 end

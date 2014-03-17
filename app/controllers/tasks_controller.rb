@@ -15,7 +15,7 @@ class TasksController < ApplicationController
       messages = @task.errors.full_messages.to_sentence
       flash.alert = t("flash.tasks.create.alert", messages: messages)
     end
-    redirect_to "/tasks"
+    redirect_to tasks_path
 
   end
 

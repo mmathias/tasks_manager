@@ -24,7 +24,7 @@ module IntegrationHelpers
   end
 
   def login_as(user)
-    visit "/"
+    visit root_path
     click_link t("menu.login")
 
     fill_in label("login.credential"), with: user.email

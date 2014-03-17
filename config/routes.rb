@@ -5,14 +5,14 @@ TodoList::Application.routes.draw do
   #os templates sao baseados no nome do controller
   root to: "login#new", via: :get
 
-  get     "login",      to: "login#new"
-  post    "login",      to: "login#create"
-  delete  "/logout",    to: "login#destroy"
+  get     "entrar",       to: "login#new", as: "login"
+  post    "entrar",       to: "login#create", as: false
+  delete  "sair",         to: "login#destroy", as: "logout"
 
-  get     "/signup",    to: "signup#new"
-  post    "/signup",    to: "signup#create"
+  get     "cadastre-se",  to: "signup#new", as: "signup"
+  post    "cadastre-se",  to: "signup#create", as: false
 
-  get     "/tasks",     to: "tasks#index"
-  post     "/tasks/new", to: "tasks#create"
+  get     "tarefas",      to: "tasks#index", as: "tasks"
+  post    "tarefas/adicionar", to: "tasks#create", as: "new_task"
 
 end

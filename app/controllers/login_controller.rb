@@ -14,7 +14,7 @@ class LoginController < ApplicationController
     if user && user.authenticate(params[:password])
       reset_session
       session[:user_id] = user.id
-      redirect_to "/tasks"
+      redirect_to tasks_path
     else
       flash.alert = t("flash.login.create.alert")
       render :new
@@ -23,6 +23,6 @@ class LoginController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to "/login"
+    redirect_to login_path
   end
 end

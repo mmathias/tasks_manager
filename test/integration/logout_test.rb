@@ -8,11 +8,11 @@ class LogoutTest < ActionDispatch::IntegrationTest
     visit "/ "
     click_button t("buttons.logout")
 
-    assert_equal "/login", current_path
+    assert_equal login_path, current_path
   end
 
   test "when unlogged" do
-    visit "/"
-    assert_equal "/", current_path
+    visit root_path
+    assert_equal root_path, current_path
   end
 end

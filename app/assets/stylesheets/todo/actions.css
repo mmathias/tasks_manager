@@ -1,0 +1,9 @@
+.actions {
+  -webkit-transition: opacity .2s ease-in;
+  font-size: 14px;
+  opacity: 0;
+}
+
+li:hover .actions {
+  opacity: 1;
+}

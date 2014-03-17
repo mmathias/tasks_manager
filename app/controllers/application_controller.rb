@@ -15,10 +15,10 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_logged_users
-    redirect_to("/tasks") if logged_in?
+    redirect_to(tasks_path) if logged_in?
   end
 
   def require_logged_user
-    redirect_to("/login") unless logged_in?
+    redirect_to(login_path) unless logged_in?
   end
 end

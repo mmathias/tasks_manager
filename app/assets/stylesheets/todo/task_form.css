@@ -1,0 +1,42 @@
+.task-form input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 24px;
+  outline-color: #83A968;
+  padding: 15px 100px 15px 15px;
+  width: 565px;
+}
+
+.button,
+.submit .button_to input[type=submit] {
+  -webkit-transition: background .2s ease-in;
+  background: #777;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.button:hover,
+.submit .button_to input[type=submit]:hover {
+  background: #666;
+}
+
+.task-form .button {
+  background: #83A968;
+  position: absolute;
+  right: 3px;
+  top: 6px;
+}
+
+.task-form .button:hover {
+  background: #688753;
+}
+
+.task-form {
+  position: relative;
+}
