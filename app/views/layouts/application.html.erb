@@ -8,36 +8,9 @@
   </head>
   <body>
     <section>
-      <header>
-        <h1>Tasks</h1>
-        <p>
-          1 tarefa pendente
-        </p>
-        <nav>
-          <ul>
-            <% if logged_in? %>
-              <li>
-                <%= t("user.greeting", name: current_user.name) %>
-              </li>
-              <li>
-                <%= button_to t("buttons.logout"), logout_path, method: "delete" %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to t("menu.signup"), signup_path %>
-              </li>
-              <li>
-                <%= link_to t("menu.login"), login_path %>
-              </li>
-            <% end %>
-          </ul>
-        </nav>
-      </header>
-      <% for type, message in flash %>
-        <p class="<%= type %> message">
-          <%= message %>
-        </p>
-      <% end %>
+      <%= render "main_header" %>
+      <%= render "flash_messages" %>
+
       <%= yield %>
     </section>
   </body>

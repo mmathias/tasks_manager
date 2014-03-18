@@ -1,0 +1,8 @@
+<li class="<%= task.status %>">
+  <%= check_box_tag "task_ids[]", task.id, task.completed_at? %>
+  <%= task.title %>
+  <span class="actions">
+    <%= link_to t("actions.edit"),  edit_task_path(task) %>
+    <%= link_to t("actions.remove"),  remove_task_path(task) %>
+  </span>
+</li>

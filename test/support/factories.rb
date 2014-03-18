@@ -6,4 +6,9 @@ FactoryGirl.define do
     password "test"
     password_confirmation "test"
   end
+
+  factory :task do
+    title "Some task"
+    association :user
+  end
 end

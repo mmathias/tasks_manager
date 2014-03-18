@@ -10,3 +10,7 @@ pt-BR:
       create:
         notice: "Sua tarefa foi adicionada com sucesso!"
         alert: "Erro: %{messages}"
+      update:
+        notice: "Sua tarefa foi atualizada com sucesso!"
+      destroy:
+        notice: "Sua tarefa foi removida com sucesso!"

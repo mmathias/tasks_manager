@@ -1,0 +1,11 @@
+<% render_pending_tasks! %>
+<p>
+  Tem certeza que deseja remover a tarefa <%= @task.title %>?
+</p>
+
+<%= form_tag remove_task_path(@task), method: "delete" do %>
+  <p class="submit">
+    <%= submit_tag t("buttons.remove_task"), class: "button" %>
+    <%= link_to t("actions.cancel"), tasks_path %>
+  </p>
+<% end %>

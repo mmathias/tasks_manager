@@ -1,0 +1,6 @@
+pt-BR:
+  task:
+    pending_count:
+      zero: "nenhuma tarefa pendente"
+      one: "1 tarefa pendente"
+      other: "%{count} tarefas pendentes"

@@ -11,6 +11,10 @@ module IntegrationHelpers
     t("helpers.submit.#{model}.create")
   end
 
+  def update_button(model)
+    t("helpers.submit.#{model}.update")
+  end
+
   def assert_form_error_message
     assert page.has_content?(t("form.error_message"))
   end

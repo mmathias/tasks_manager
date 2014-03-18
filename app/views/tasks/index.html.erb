@@ -1,24 +1,13 @@
-<%= form_for @task, url: new_task_path, html: {class: "task-form"}  do |f| %>
-  <p>
-    <%= f.label :title, t("labels.task.title") %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.submit class: "button"%>
+<% render_pending_tasks! %>
+<%= render "form", task: @task, url: new_task_path %>
+
+<%= form_tag update_tasks_in_batch_path, method: "patch" do %>
+  <ul>
+    <%= render @tasks %>
+  </ul>
+  <p class="submit">
+    <%= submit_tag t("buttons.update_all"), class:"button" %>
   </p>
 <% end %>
 
-<%= form_tag "/" do |f| %>
-  <ul>
-    <% @tasks.each do |task| %>
-      <li class="<%= task.status %>">
-        <%= check_box_tag "box" %>
-        <%= task.title %>
-        <span class="actions">
-          <a href="/tasks/">Editar</a>
-          <a href="/tasks/">Editar</a>
-        </span>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+

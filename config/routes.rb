@@ -13,6 +13,12 @@ TodoList::Application.routes.draw do
   post    "cadastre-se",  to: "signup#create", as: false
 
   get     "tarefas",      to: "tasks#index", as: "tasks"
+  get     "tarefas/:id/editar", to: "tasks#edit", as: "edit_task"
+  patch   "tarefas/:id/editar", to: "tasks#update", as: false
+  get     "tarefas/:id/remover", to: "tasks#remove", as: "remove_task"
+  delete  "tarefas/:id/remover", to: "tasks#destroy", as: false
   post    "tarefas/adicionar", to: "tasks#create", as: "new_task"
+  patch   "tarefas/atualizar", to: "tasks#batch_update", as: "update_tasks_in_batch"
+
 
 end
