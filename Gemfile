@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+#ruby "2.1.0"
 
 gem "rails", "4.0.3"
 gem "mysql2"
@@ -18,4 +19,8 @@ group :test do
   gem "capybara"
   gem "turn"
   gem "factory_girl"
+end
+
+group :production do
+  gem "rails_12factor"
 end
