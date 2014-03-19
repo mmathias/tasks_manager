@@ -10,6 +10,7 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "rails-i18n"
 gem "bcrypt-ruby", "~> 3.1.2"
+gem "rack-timeout"
 
 group :development, :test do
   gem "pry-meta"
@@ -23,4 +24,5 @@ end
 
 group :production do
   gem "rails_12factor"
+  gem "unicorn"
 end
